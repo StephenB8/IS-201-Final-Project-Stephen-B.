@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+   
+    <title>Agent Randomizer</title>
+    <style>
+        body {
+            background-color: #111; /* A nice dark Valorant theme */
+            color: white;
+            text-align: center; 
+            font-family: Arial, sans-serif;
+            margin-top: 100px;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 20px;
+            background-color: #ff4655;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+   </head>
+     <body>
+        <h1 id="agent-display">Who will you play?</h1>
+         <button id="randomize-btn">Instalock!</button>
+
+<script>
+   var agents = ["Jett", "Raze", "Iso", "Neon", "Phoenix", "Waylay", "Yoru", "Sova", "Breach", "Fade", "Gekko", "Skye", "Tejo", "Astra", "Brim", "Clove", "Harbor", "Miks", "Viper", "Sage", "Omen", "Reyna", "Cypher", "Killjoy", "Chamber", "Deadlock", "Veto", "Vyse"];
+
+var display = document.getElementById("agent-display");
+var button = document.getElementById("randomize-btn");
+
+button.addEventListener("click", function() {
+    // 1. Pick a random number
+    var randomIndex = Math.floor(Math.random() * agents.length);
+    
+    // 2. Find the agent at that number
+    var chosenAgent = agents[randomIndex];
+    
+    // 3. Update the screen
+    display.textContent = "You must play: " + chosenAgent;
+});
+</script>
+</body>
